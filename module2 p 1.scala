@@ -4,7 +4,7 @@ object MovingAverageApp {
     val file = Source.fromFile("games.csv")
     val turns = file.getLines().drop(1).flatMap { line =>
       val cols = line.split(",")
-      cols(4).trim.toDoubleOption   // turns column
+      cols(4).trim.toDoubleOption   
     }.toList
     file.close()
     val window = 5
