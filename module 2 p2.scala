@@ -1,13 +1,13 @@
 import scala.io.Source
 object CorrelationApp {
   def main(args: Array[String]): Unit = {
-    val filePath = "games.csv"   // your file in root
+    val filePath = "games.csv"   
     val file = Source.fromFile(filePath)
     val data = file.getLines().drop(1).flatMap { line =>
       val cols = line.split(",")
       for {
-        x <- cols(9).trim.toDoubleOption   // white_rating
-        y <- cols(11).trim.toDoubleOption  // black_rating
+        x <- cols(9).trim.toDoubleOption   
+        y <- cols(11).trim.toDoubleOption  
       } yield (x, y)
     }.toList
     file.close()
